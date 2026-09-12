@@ -1,4 +1,3 @@
-```yaml
 name: Python CI
 
 on:
@@ -31,4 +30,3 @@ jobs:
       - name: Run Test
         run: |
           pipenv run pytest -v
-```
