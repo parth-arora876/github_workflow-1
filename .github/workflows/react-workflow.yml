@@ -1,0 +1,30 @@
+name: node working
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node js
+        uses: actions/setup-node@v6
+
+      - name: Install Node Dependencies
+        run: npm install
+
+
+      - name: Build React app
+        run: npm run build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: react-build
+          path: dist
